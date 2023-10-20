@@ -38,8 +38,8 @@ You can get an overview of the available options by running `quantile_[design] -
 * `--(no-)early-stop` Whether to stop execution when far above/below detectable threshold
 * `--num-samples-f-given-d` `arg` Number of samples used for the estimation of entropy H(X|D=d)
 * `--num-samples-f-given-ds` `arg` Number of samples used for the estimation of entropy H(X|D=d,S=s)
-* `-s`, `--num-secrets` `arg` Number of secret values s for S when averaging H(F|D=d,S=s)
-* `-d`, `--num-data` `arg` Number of data values d when averaging MI(S;F|D=d)
+* `-s`, `--num-secrets` `arg` Number of secret values s for S when averaging H(X|D=d,S=s)
+* `-d`, `--num-data` `arg` Number of data values d when averaging MI(X;S|D=d)
 * `-n`, `--num-samples` `arg` Total number of samples of X taken for all the estimations together.
 * `-t`, `--num-threads` `arg` Number of threads that will run the sampling. Make sure to optimize this, because using as many thready as there are cores on your machine is not always optimal.
 * `-x`, `--timeout` `arg` Terminate the program after a specified number of seconds
