@@ -141,8 +141,3 @@ add_subdirectory(tests/aes_dom)
 ##################################### AES 2BIT #####################################
 add_subdirectory(tests/aes_2bit)
 
-##################################### PRINCE TI #####################################
-add_subdirectory(tests/prince_ti)
-
-##################################### NULL FRESH #####################################
-add_subdirectory(tests/prince_null)
