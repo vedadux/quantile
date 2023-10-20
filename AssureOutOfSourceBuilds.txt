@@ -1,0 +1,36 @@
+#
+#   Copyright 2010 Kent Williams, University of Iowa
+#   Copyright 2020 Vedad Hadžić, Graz University of Technology
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+#
+
+# Notice: This is simplified and adapted from:
+# https://github.com/InsightSoftwareConsortium/ITK/commits/master/CMake/PreventInSourceBuilds.cmake
+
+function(AssureOutOfSourceBuilds)
+  # make sure the user doesn't play dirty with symlinks
+  get_filename_component(srcdir "${CMAKE_SOURCE_DIR}" REALPATH)
+  get_filename_component(bindir "${CMAKE_BINARY_DIR}" REALPATH)
+
+  # disallow in-source builds
+  if(${srcdir} STREQUAL ${bindir})
+    message("######################################################")
+    message("You are attempting to build in your Source Directory.")
+    message("You must run cmake from a build directory.")
+    message("######################################################")
+    file(REMOVE_RECURSE "${CMAKE_SOURCE_DIR}/CMakeCache.txt" "${CMAKE_SOURCE_DIR}/CMakeFiles")
+    message(FATAL_ERROR "Attempted to run an in-source build.")
+  endif()
+
+endfunction()

@@ -1,0 +1,9 @@
+[submodule "cxxopts"]
+	path = cxxopts
+	url = https://github.com/jarro2783/cxxopts/
+[submodule "json"]
+	path = json
+	url = https://github.com/nlohmann/json
+[submodule "designs/aes-dom"]
+	path = designs/aes-dom
+	url = https://github.com/hgrosz/aes-dom.git
